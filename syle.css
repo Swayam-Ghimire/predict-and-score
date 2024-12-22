@@ -1,0 +1,132 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'ubuntu';
+}
+body {
+    background: linear-gradient(to left, rgb(226, 236, 242), rgb(245, 224, 227), rgb(244, 244, 244));
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+    width: 450px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.form-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input_group {
+    position: relative;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input_group i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.input_group input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input_group input:focus {
+    border-color: #007BFF;
+}
+
+.input_group label {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #666;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.or {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.icons i {
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.icons i:hover {
+    color: #007BFF;
+}
+
+.links {
+    font-size: 14px;
+    color: #333;
+}
+
+.links p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.links button {
+    background: none;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.links button:hover {
+    color: #0056b3;
+}
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}

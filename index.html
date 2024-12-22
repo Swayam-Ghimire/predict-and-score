@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Liverpool, prediction game, football, liverpool football, registration">
+    <meta name="description" content="registration and login system">
+    <meta name="author" content="Swayam Ghimire">
+    <title>Game Registration</title>
+    <link rel="stylesheet" href="syle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container" id="signup">
+        <h1 class="form-title">Register</h1>
+        <form action="" method="post">
+            <div class="input_group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="first" id="fname" placeholder="(e.g Swayam)" required>
+                <label for="first">First Name</label>
+            </div>
+            <div class="input_group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="last" id="lname" placeholder="(e.g Ghimire)" required>
+                <label for="last">Last Name</label>
+            </div>
+            <div class="input_group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="(e.g abc@gmail.com)" required>
+                <label for="email">E-mail</label>
+            </div>
+            <div class="input_group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="pass" id="password" placeholder="Password" required>
+                <label for="pass">Password</label>
+            </div>
+            <input type="submit" value="Register" class="btn" name="SignUp">
+        </form>
+        <p class="or">Alternative Registration</p>
+        <div class="icons">
+            <i class="fab fa-github"></i>
+            <i class="fab fa-google"></i>
+        </div>
+
+        <div class="links">
+            <p>
+                Already have an account??
+            </p>
+            <button id="loginInButton">Login In</button>
+        </div>
+    </div>
+    <div class="container" id="signup">
+        <h1 class="form-title">Login</h1>
+        <form action="" method="post">
+            <div class="input_group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="(e.g abc@gmail.com)" required>
+                <label for="email">E-mail</label>
+            </div>
+            <div class="input_group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="pass" id="password" placeholder="Password" required>
+                <label for="pass">Password</label>
+            </div>
+            <input type="submit" value="Login" class="btn" name="LogIn">
+        </form>
+        <p class="or">Continue with</p>
+        <div class="icons">
+            <i class="fab fa-github"></i>
+            <i class="fab fa-google"></i>
+        </div>
+
+        <div class="links">
+            <p>
+                Don't have an account?
+            </p>
+            <button id="signUpButton">Register</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
