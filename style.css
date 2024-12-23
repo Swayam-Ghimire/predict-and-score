@@ -21,9 +21,11 @@ body {
 }
 
 .form-title {
-    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding:1.3rem;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 0.4rem;
 }
 
 .input_group {
@@ -34,38 +36,37 @@ body {
 
 .input_group i {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 10px;
-    transform: translateY(-50%);
-    color: #666;
+    color: rgb(102, 102, 102);
 }
 
 .input_group input {
     width: 100%;
     padding: 10px 10px 10px 35px;
     font-size: 14px;
-    border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    outline: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(221, 231, 255);
 }
 
 .input_group input:focus {
-    border-color: #007BFF;
+    border-bottom: 2px solid rgb(0,123, 255);
+    transition: border-bottom 0.3s ease;
 }
 
 .input_group label {
     display: block;
     font-size: 12px;
     margin-top: 5px;
-    color: #666;
+    color: rgb(102, 102, 102);
 }
 
 .btn {
     width: 100%;
     padding: 10px;
-    background: #007BFF;
+    background: rgb(0, 123, 255);
     color: white;
     font-size: 16px;
     border: none;
@@ -75,13 +76,13 @@ body {
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: rgb(0, 86, 179);
 }
 
 .or {
     margin: 15px 0;
     font-size: 14px;
-    color: #888;
+    color: rgb(136, 136, 136);
 }
 
 .icons {
@@ -93,36 +94,37 @@ body {
 
 .icons i {
     font-size: 20px;
-    color: #555;
+    color: black;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .icons i:hover {
-    color: #007BFF;
+    color: rgb(0, 123, 255);
 }
 
 .links {
     font-size: 14px;
-    color: #333;
+    color: rgb(51, 51, 51);
 }
 
 .links p {
     margin: 0;
-    margin-bottom: 10px;
+    display: inline;
+    margin:0px 10px 10px 0px;
 }
 
 .links button {
     background: none;
     border: none;
-    color: #007BFF;
+    color: rgb(0, 123, 255);
     cursor: pointer;
     font-size: 14px;
-    text-decoration: underline;
 }
 
 .links button:hover {
-    color: #0056b3;
+    color: rgb(4, 76, 152);
+    text-decoration: underline;
 }
 /* Media Query for Responsive Design */
 @media (max-width: 768px) {
