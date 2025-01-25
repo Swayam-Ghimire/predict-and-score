@@ -1,6 +1,8 @@
 <?php
 include('database.php');
+?>
 
+<?php
 // Checking if the form is submitted
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $first_name = $_POST['first'];
@@ -12,13 +14,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     else{
         // Inserting data into the database
-        $query = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
-        $result = mysqli_query($connection, $query);
-        if($result){
-            echo "User registered successfully";
+        $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
+        try{
+            mysqli_query($connection, $sql);
+            header('Location: home.php');
         }
-        else{
-            echo "Error registering user";
+        catch(mysqli_sql_exception $e){
+            echo "Error: {$e->getMessage()}";
         }
     }
     // Closing the connection
