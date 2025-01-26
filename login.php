@@ -1,28 +1,28 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize user input
-    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
-    $password = filter_var(trim($_POST['pass']), FILTER_SANITIZE_SPECIAL_CHARS);
-
-    // Validate user input
-    $errors = [];
-
-    if (empty($email)) {
-        $errors[] = "Username is required.";
+include('database.php');
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $email = $_POST['email'];
+    $password = $_POST['pass'];
+    if(empty($email) || empty($password)){
+        echo "Please fill in all fields";
     }
-
-    if (empty($password)) {
-        $errors[] = "Password is required.";
-    }
-
-    if (empty($errors)) {
-        // Proceed with login logic (e.g., check credentials in the database)
-        // ...
-    } else {
-        // Display errors
-        foreach ($errors as $error) {
-            echo "<p>$error</p>";
+    else{
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        $result = mysqli_query($connection, $sql);
+        if(mysqli_num_rows($result) > 0){
+            $row = mysqli_fetch_assoc($result);
+            if($row['email'] == $email && password_verify($password, $row['password'])){
+                header('Location: home.php');
+            }
+            else{
+                echo "Invalid email or password";
+            }
+        }
+        else{
+            die("No user found with that email");
         }
     }
+    // Closing the connection
+    mysqli_close($connection);
 }
 ?>
