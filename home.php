@@ -28,24 +28,43 @@
     </header>
 
     <section id="main">
-        <div class="table_header">
-            <h1>Upcoming Fixtures</h1>
-        </div>
-        <div class="table">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th class="head">Id</th>
-                        <th class="head">Match</th>
-                        <th class="head">Date and Time</th>
-                        <th class="head">Prediction</th>
-                        <th class="head">Actions</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-
-    </section>
+    <div class="table_header">
+        <h1>Upcoming Fixtures</h1>
+    </div>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th class="head">Id</th>
+                    <th class="head">Match</th>
+                    <th class="head">Date and Time</th>
+                    <th class="head">Prediction</th>
+                    <th class="head">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Team A vs Team B</td>
+                    <td>2025-01-30 18:00</td>
+                    <td>Team A Wins</td>
+                    <td>
+                        <button class="action-btn">Edit</button>
+                        <button class="action-btn">Submit</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Team C vs Team D</td>
+                    <td>2025-02-05 20:00</td>
+                    <td>Draw</td>
+                    <td>
+                        <button class="action-btn">Edit</button>
+                        <button class="action-btn">Submit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 </body>
 
 </html>

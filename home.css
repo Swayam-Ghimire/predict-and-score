@@ -31,13 +31,13 @@ ul{
     color: black;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
-    font-size: 18px;
+    font-size: 15px;
 }
 .item a:hover{
     background: rgb(255, 255, 255);
     color: rgb(0, 123, 255);
     padding: 12px 20px;
-    border-radius: 6px;
+    border-radius: 9px;
 }
 #logo{
     width: 4rem;
@@ -46,4 +46,85 @@ ul{
 #logo img{
     width: 100%;
     height: 100%;
+}
+.head, table{
+    border-collapse: collapse;
+}
+#main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table_header {
+    background-color: rgb(108, 92, 231);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid rgb(75, 75, 155);
+}
+
+.table_header {
+
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.table {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.7rem;
+}
+
+thead tr {
+    background-color: rgb(248, 248, 248);
+}
+
+.head, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.head {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(51, 51, 51);
+}
+
+tr:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+.action-btn {
+    background-color: rgb(108, 92, 231);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in;
+}
+
+.action-btn:hover {
+    background-color: rgb(75, 75, 155);
+}
+
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px;
+    }
+    .action-btn {
+        padding: 6px 12px;
+        margin:2px;
+    }
 }
