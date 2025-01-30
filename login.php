@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('database.php');
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['LogIn'])){
     $email = $_POST['email'];
     $password = $_POST['pass'];
     if(empty($email) || empty($password)){
@@ -23,13 +23,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             }
             else{
                 echo "Invalid password";
-                $_SESSION['logged_in'] = false;
-                sleep(5);
             }
         }
     }
     // Closing the connection
     mysqli_close($connection);
 }
-header('Location: index.html');
 ?>
+<meta http-equiv="refresh" content="5; url=http://localhost:8000/index.html">
