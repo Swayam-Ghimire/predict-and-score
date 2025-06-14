@@ -126,6 +126,12 @@ body {
     color: rgb(4, 76, 152);
     text-decoration: underline;
 }
+
+.prediction {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+}
 /* Media Query for Responsive Design */
 @media (max-width: 768px) {
     .container {

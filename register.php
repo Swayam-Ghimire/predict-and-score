@@ -15,8 +15,8 @@ function validate_email($email){
     }
     else{
         $sql = "SELECT * FROM users WHERE email = '$email'";
-        $result = mysqli_query($connection, $sql);
-        if(mysqli_num_rows($result) > 0){
+        $result = $connection->query($sql);
+        if($result->num_rows > 0){
             echo "Email already exists";
         }
 }
@@ -25,7 +25,7 @@ function validate_email($email){
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['SignUp'])){
     $first_name = sanitize_input($_POST['first']);
     $last_name = sanitize_input($_POST['last']);
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
     $password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
     validate_email($email);
     if(empty($first_name) || empty($last_name) || empty($email) || empty($password)){
@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['SignUp'])){
         // Inserting data into the database
         $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
         try{
-            mysqli_query($connection, $sql);
+            $connection->query($sql);
             header('Location: index.html');
             exit();
         }
@@ -44,6 +44,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['SignUp'])){
         }
     }
     // Closing the connection
-    mysqli_close($connection);
+    $connection->close();
 }
 ?>

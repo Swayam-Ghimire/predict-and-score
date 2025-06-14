@@ -2,16 +2,16 @@
 session_start();
 include('database.php');
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['LogIn'])){
-    $email = $_POST['email'];
+    $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $password = $_POST['pass'];
     if(empty($email) || empty($password)){
         echo "Please fill in all fields";
     }
     else{
         $sql = "SELECT * FROM users WHERE email = '$email'";
-        $result = mysqli_query($connection, $sql);
-        if(mysqli_num_rows($result) > 0){
-            $row = mysqli_fetch_assoc($result);
+        $result = $connection->query($sql);
+        if($result->num_rows > 0){
+            $row = $result->fetch_assoc();
             if(password_verify($password, $row['password'])){
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['first_name'] = $row['first_name'];
@@ -19,7 +19,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['LogIn'])){
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['logged_in'] = true;
                 header('Location: home.php');
-                exit();
             }
             else{
                 echo "Invalid password";
@@ -27,7 +26,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['LogIn'])){
         }
     }
     // Closing the connection
-    mysqli_close($connection);
+    $connection->close();
+    exit();
 }
 ?>
 <meta http-equiv="refresh" content="5; url=http://localhost:8000/index.html">
