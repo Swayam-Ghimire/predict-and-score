@@ -6,7 +6,7 @@ if (empty($_SESSION['logged_in'])) {
 }
 include('database.php');
 $uid = $_SESSION['user_id'];
-$matches = "SELECT * FROM matches WHERE date_time < NOW() ORDER BY date_time ASC";
+$matches = "SELECT * FROM matches ORDER BY date_time ASC";
 $result = $connection->query($matches);
 if (!$result) {
     throw new Exception("Database Query Failed: " . $connection->error);
@@ -23,39 +23,8 @@ if ($result->num_rows > 0) {
 } else {
     $match = [];
 }
+include_once('header.php');
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Liverpool, prediction game, football, liverpool football, registration">
-    <meta name="description" content="registration and login system">
-    <meta name="author" content="Swayam Ghimire">
-    <title>Upcoming Fixtures</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
-    <link rel="stylesheet" href="home.css">
-</head>
-
-<body>
-    <header>
-        <nav class="navbar">
-            <div id="logo">
-                <a href="prediction.php">
-                    <img src="images/liverpool.jpg" alt="logo">
-                </a>
-            </div>
-            <ul>
-                <li class="item"><a href="#main">Fixtures</a></li>
-                <li class="item"><a href="leaderboard.php">Leaderboard</a></li>
-                <li class="item"><a href="logout.php">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <section id="main">
         <div class="table_header">
             <h1>Upcoming Fixtures</h1>
@@ -68,9 +37,7 @@ if ($result->num_rows > 0) {
                         <th class="head">Match</th>
                         <th class="head">Date and Time</th>
                         <th class="head">Prediction</th>
-                        <!-- <th class="head">Actual Score</th> -->
                         <th class="head">Actions</th>
-                        <!-- <th class="head">Points</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -122,7 +89,7 @@ if ($result->num_rows > 0) {
                             }
                         }
                     } catch (Exception $e) {
-                        echo "<tr><td colspan='7'>Error: {$e->getMessage()}</td></tr>";
+                        echo "<tr><td colspan='5'>Error: {$e->getMessage()}</td></tr>";
                     } finally {
                         if (isset($connection)) {
                             $connection->close();

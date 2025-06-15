@@ -44,7 +44,6 @@ try{
 }
     catch (Exception $e){
         echo "<h5>Error: {$e->getMessage()}</h5>";
-        exit();
     }
     finally {
         if (isset($stmt)) {
