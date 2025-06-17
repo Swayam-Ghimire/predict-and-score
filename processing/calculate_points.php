@@ -1,10 +1,6 @@
 <?php
-session_start();
-if (empty($_SESSION['logged_in'])) {
-    header('Location: index.html');
-    exit();
-}
-include('database.php');
+include('../includes/verify.php');
+include('../includes/database.php');
 $uid = $_SESSION['user_id'];
 
 function calculatePoints($predictionScore, $actualScore, $matchId){

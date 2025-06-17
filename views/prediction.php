@@ -1,8 +1,8 @@
 <?php
-include_once('header.php');
-include('calculate_points.php');
-include('database.php');
-echo "<section id='main'>
+include('../processing/calculate_points.php');
+include('../includes/database.php');
+include_once('../includes/header.php');
+echo "<div class='wrapper'><section id='main'>
     <div class='table_header'>
         <h1>Your Predictions and Points</h1>
     </div>
@@ -72,6 +72,7 @@ finally {
 ?>
 </tbody>
 </table>
+</div>
 </section>
-</body>
-</html>
+</div>
+<?php include_once('../includes/footer.php'); ?>

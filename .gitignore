@@ -1,5 +1,3 @@
-test.php
-fetch_matches.php
-table.php
+api/
 *.pdf
-images/
+assets/images/

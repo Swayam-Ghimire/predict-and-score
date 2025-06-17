@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('database.php');
+include('../includes/database.php');
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['LogIn'])){
     $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
     $password = $_POST['pass'];
@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['LogIn'])){
                 $_SESSION['last_name'] = $row['last_name'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['logged_in'] = true;
-                header('Location: home.php');
+                header('Location: ../views/home.php');
             }
             else{
                 echo "Invalid password";

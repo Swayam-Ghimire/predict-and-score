@@ -1,5 +1,5 @@
 <?php
-include('database.php');
+include('../include/database.php');
 function sanitize_input($data){
     $data = trim($data);
     $data = stripslashes($data);
@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['SignUp'])){
         $sql = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$first_name', '$last_name', '$email', '$password')";
         try{
             $connection->query($sql);
-            header('Location: index.html');
+            header('Location: ../index.html');
             exit();
         }
         catch(mysqli_sql_exception $e){

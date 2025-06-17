@@ -1,10 +1,6 @@
 <?php
-session_start();
-if (empty($_SESSION['logged_in'])) {
-    header('Location: index.html');
-    exit();
-}
-include('database.php');
+include('../includes/verify.php');
+include('../includes/database.php');
 $uid = $_SESSION['user_id'];
 $matches = "SELECT * FROM matches ORDER BY date_time ASC";
 $result = $connection->query($matches);
@@ -23,8 +19,9 @@ if ($result->num_rows > 0) {
 } else {
     $match = [];
 }
-include_once('header.php');
+include_once('../includes/header.php');
 ?>
+<div class="wrapper">
     <section id="main">
         <div class="table_header">
             <h1>Upcoming Fixtures</h1>
@@ -49,7 +46,7 @@ include_once('header.php');
                             foreach ($match as $m) {
                                 $matchId = $m['id'];
                                 $isLocked = is_null($m['actual_score']);
-                                echo "<tr><form action='process_prediction.php' method='POST'>
+                                echo "<tr><form action='../processing/process_prediction.php' method='POST'>
                                 <td>{$matchId}</td>
                                 <td>{$m['match_name']}</td>
                                 <td>{$m['date_time']}</td>
@@ -100,8 +97,5 @@ include_once('header.php');
             </table>
         </div>
     </section>
-    <footer></footer>
-    <script src="script.js"></script>
-</body>
-
-</html>
+</div>
+<?php include_once('../includes/footer.php'); ?>

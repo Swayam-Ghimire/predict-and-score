@@ -1,10 +1,6 @@
 <?php
-session_start();
-if (empty($_SESSION['logged_in'])) {
-    header('Location:index.html');
-    exit();
-}
-include('database.php');
+include('../includes/verify.php');
+include('../includes/database.php');
 try{
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $prediction = '';
@@ -37,7 +33,7 @@ try{
     
 }
     else{
-        header('Location: home.php');
+        header('Location: ../views/home.php');
         exit();
     }
 
@@ -53,6 +49,6 @@ try{
             $stmt1->close();
         }
         $connection->close();
-        header('Location: home.php');
+        header('Location: ../views/home.php');
     }
 ?>

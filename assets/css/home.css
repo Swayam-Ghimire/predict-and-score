@@ -7,6 +7,8 @@
 body{
     background: linear-gradient(to right, rgb(226, 236, 242), rgb(245, 224, 227), rgb(244, 244, 244));
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .navbar{
     display: flex;
@@ -122,13 +124,40 @@ tr:hover {
 .prediction {
     background-color: rgb(255,255,255);
     line-height: 1.5;
-    max-length: 6;
-    size: 14px;
     font-size: 12px;
     color: rgb(51, 51, 51);
 }
 
-@media (max-width: 768px) {
+.wrapper{
+     flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight {
+    background-color: rgb(255, 255, 0);
+    font-weight: bold;
+}
+.highlight:hover {
+    background-color: rgb(255, 204, 0);
+    cursor:pointer;
+}
+
+.footer {
+    margin-top: auto; 
+    background-color: #222; 
+    color: #ccc; 
+    text-align: center; 
+    padding: 20px 0;
+    height: fit-content;
+}
+.footer a {
+    margin: 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) { 
     th, td {
         padding: 8px;
     }
