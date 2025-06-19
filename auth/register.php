@@ -1,5 +1,5 @@
 <?php
-include('../include/database.php');
+include('../includes/database.php');
 function sanitize_input($data){
     $data = trim($data);
     $data = stripslashes($data);

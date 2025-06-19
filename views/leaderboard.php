@@ -42,6 +42,9 @@ $sql = "SELECT CONCAT(u.first_name, ' ', u.last_name) AS username, u.id, SUM(p.p
                                       $rank++;
                             }
                         }
+                        else{
+                            throw new Exception("User with any points is not found.");
+                        }
                     }
                     catch(Exception $e){
                         echo "<tr><td colspan='3'>Error: " . $e->getMessage() . "</td></tr>";

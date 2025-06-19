@@ -28,7 +28,7 @@
         <nav class="navbar">
             <div id="logo">
                 <a href="../views/prediction.php">
-                    <img src="../assets/images/liverpool.jpg" alt="logo">
+                    <img src="../assets/images/liverpoollogo.png" alt="logo">
                 </a>
             </div>
             <ul>
